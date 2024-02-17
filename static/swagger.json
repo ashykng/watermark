@@ -1,0 +1,138 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Watermark",
+      "version": "1.0.0",
+      "description": "API for adding watermark to images in Flask"
+    },
+    "paths": {
+      "/photo/upload/downLeft": {
+        "post": {
+          "summary": "Upload and set Watermark on down-left of image",
+          "description": "Upload an image file and apply a watermark",
+          "requestBody": {
+            "content": {
+              "multipart/form-data": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Watermarked image file"
+            },
+            "400": {
+              "description": "Invalid image file"
+            }
+          }
+        }
+      },
+      "/photos/upload/downLeft": {
+        "post": {
+          "tags": [
+            "default"
+          ],
+          "requestBody": {
+            "content": {
+              "multipart/form-data": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "files": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "format": "binary"
+                      }
+                    }
+                  }
+                },
+                "encoding": {
+                  "files": {
+                    "style": "form"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/photo/upload/center": {
+        "post": {
+          "summary": "Upload and set Watermark on center of the image",
+          "description": "Upload an image file and apply a watermark",
+          "requestBody": {
+            "content": {
+              "multipart/form-data": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Watermarked image file"
+            },
+            "400": {
+              "description": "Invalid image file"
+            }
+          }
+        }
+      },
+      "/photos/upload/center": {
+        "post": {
+          "tags": [
+            "default"
+          ],
+          "requestBody": {
+            "content": {
+              "multipart/form-data": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "files": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "format": "binary"
+                      }
+                    }
+                  }
+                },
+                "encoding": {
+                  "files": {
+                    "style": "form"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      }
+    }
+  }
